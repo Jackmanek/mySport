@@ -1,5 +1,7 @@
 package com.example.MySports.entidades;
 
+import com.example.MySports.validation.PasswordMatching;
+import com.example.MySports.validation.StrongPassword;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -8,9 +10,14 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-
-
 @Entity
+@PasswordMatching(
+                password = "password",
+                confirmPassword = "confirmPassword",
+                message = "Password and Confirm Password must be matched!"
+)
+
+
 public class User {
 
     @Id
@@ -22,21 +29,21 @@ public class User {
     @NotBlank
     @Email(message = "Introduce un formato correcto de email")
     private String email;
-    @NotBlank
-    @Size(min=8, max=15)
+
+    @StrongPassword
     private String password;
-    @NotBlank
-    @Size(min=8, max=15)
-    private String repassword;
+
+    private String confirmPassword;
 
     public User() {
     }
 
-    public User(Long id, String name, String email, String password) {
+    public User(Long id, String name, String email, String password, String confirmPassword) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
+        this.confirmPassword = confirmPassword;
     }
 
     public Long getId() {
@@ -71,11 +78,11 @@ public class User {
         this.password = password;
     }
 
-    public String getRepassword() {
-        return repassword;
+    public String getConfirmPassword() {
+        return confirmPassword;
     }
 
-    public void setRepassword(String repassword) {
-        this.repassword = repassword;
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
     }
 }

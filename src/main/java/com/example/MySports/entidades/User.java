@@ -4,6 +4,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
+
 
 @Entity
 public class User {
@@ -11,9 +16,18 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Size(min=3, max=10)
+    @NotBlank
     private String name;
+    @NotBlank
+    @Email(message = "Introduce un formato correcto de email")
     private String email;
+    @NotBlank
+    @Size(min=8, max=15)
     private String password;
+    @NotBlank
+    @Size(min=8, max=15)
+    private String repassword;
 
     public User() {
     }
@@ -55,5 +69,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRepassword() {
+        return repassword;
+    }
+
+    public void setRepassword(String repassword) {
+        this.repassword = repassword;
     }
 }

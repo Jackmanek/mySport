@@ -21,6 +21,11 @@ public class RutaControlador {
         m.addAttribute("user", new User());
         return "pages/registro";
     }
+    @GetMapping("/session")
+    public String showSession(Model m) {
+        m.addAttribute("user", new User());
+        return "pages/session";
+    }
 
     @RequestMapping("/processForm")
     public String showCustomerData(@Valid @ModelAttribute("user") User use, BindingResult thebindingresult) {

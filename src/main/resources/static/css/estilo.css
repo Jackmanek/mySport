@@ -1,6 +1,57 @@
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
 #jas-form{
      top: 100%;
      left: -73px;
      right: 0px;
      margin-top: var(--bs-dropdown-spacer);
+}
+.cuadroformu{
+     margin: 10px auto;
+     width: 50vw;
+     height: 23rem;
+     border: 1px solid grey;
+     background-color: azure;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     align-content: center;
+
+
+}
+.formulario{
+     width: 90%;
+     height: 80%;
+     background-color: beige;
+     padding: 2rem;
+
+}
+.enlaceSR{
+     width: 90%;
+     height: 10%;
+     background-color: aqua;
+     display: flex;
+}
+.enlaceSR div{
+     width: 50%;
+     height: 100%;
+     background-color: black;
+     display: flex;
+     justify-content: center;
+}
+.enlaceSR div a{
+     text-decoration: none;
+     color: white;
+     width: 100%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.enlaceSR div a:hover{
+     background-color: darkgray;
 }

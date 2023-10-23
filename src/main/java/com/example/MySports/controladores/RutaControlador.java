@@ -21,6 +21,11 @@ public class RutaControlador {
         return "layouts/app";
     }
 
+    @GetMapping("/home")
+    public String showHome(){
+        return "pages/home";
+    }
+
     @GetMapping("/registro")
     public String showRegistro(Model m) {
         m.addAttribute("user", new User());

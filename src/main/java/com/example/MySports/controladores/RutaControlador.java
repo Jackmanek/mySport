@@ -20,10 +20,14 @@ public class RutaControlador {
     public String showIndex() {
         return "layouts/app";
     }
-
     @GetMapping("/home")
-    public String showHome(){
+    public String showhome(){
         return "pages/home";
+    }
+
+    @GetMapping("/sports")
+    public String showSports(){
+        return "pages/sports";
     }
 
     @GetMapping("/registro")

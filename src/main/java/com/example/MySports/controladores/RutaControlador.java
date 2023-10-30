@@ -16,15 +16,34 @@ public class RutaControlador {
 
     @Autowired
     private UserRepository userRepository;
+
+
+    // Inicio
     @GetMapping("/")
     public String showIndex() {
         return "layouts/app";
     }
+    // home
     @GetMapping("/home")
     public String showhome(){
         return "pages/home";
     }
+    //Noticias
+    @GetMapping("/newFutbol")
+    public String showNewsFutbol(){
+        return "pages/newFutbol";
+    }
+    @GetMapping("/newFormula")
+    public String showNewsFormula(){
+        return "pages/newFormula";
+    }
+    @GetMapping("/newPadel")
+    public String showNewsPadel(){
+        return "pages/newPadel";
+    }
 
+
+    //Seleccionar Favoritos
     @GetMapping("/sports")
     public String showSports(){
         return "pages/sports";
@@ -41,16 +60,23 @@ public class RutaControlador {
         return "pages/session";
     }
 
-    @RequestMapping("/processForm")
+    @RequestMapping("/processFormR")
     public String showCustomerData(@Valid @ModelAttribute("user") User use, BindingResult thebindingresult) {
         if (thebindingresult.hasErrors()) {
             return "pages/registro";
         } else {
+
+            return "pages/registro";
+        }
+    }
+    @RequestMapping("/processFormS")
+    public String showCustomerData1(@Valid @ModelAttribute("user") User use, BindingResult thebindingresult) {
+        if (thebindingresult.hasErrors()) {
+            return "pages/session";
+        } else {
             userRepository.save(use);
             return "pages/registro";
         }
-
-
     }
 
     @PostMapping("/signup")

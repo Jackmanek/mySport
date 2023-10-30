@@ -10,6 +10,9 @@
 <body>
     <section layout:fragment="content-registro">
         <div class="cuadroformu">
+            <div>
+                <h2>Registro</h2>
+            </div>
         <form action="#" th:action="@{/signup}" th:object="${user}" method="post" class="formulario">
                 <div class="w-50 mb-3">
                     <input type="text" th:field="*{name}" placeholder="Name" class="form-control"/>

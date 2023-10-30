@@ -8,33 +8,42 @@
     <title>Home</title>
 </head>
 <body>
-    <section layout:fragment="content-home" class="homeJ">
-        <header>
-            <div class="logoHeader">
-                <h1>My</h1>
-                <h1>Favorite</h1>
-                <h1>Sports</h1>
-            </div>
-            <div class='content'>
-                <div class='visible'>
-                    <ul>
-                        <li>Futbol</li>
-                        <li>Formula I</li>
-                        <li>World Padel Series</li>
-                    </ul>
+
+        <section layout:fragment="content-home" class="homeJ" >
+            <header>
+                <div class="logoHeader">
+                    <h1>My</h1>
+                    <h1>Favorite</h1>
+                    <h1>Sports</h1>
                 </div>
+                <div class='content'>
+                    <div class='visible'>
+                        <ul>
+                            <li>Futbol</li>
+                            <li>Formula I</li>
+                            <li>World Padel Series</li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <div class="nav-sports">
+                <nav>
+                    <h3><a href="#">Favoritos</a></h3>
+                    <ul>
+                        <a href="/newFutbol"><i class="fa-solid fa-futbol"></i><li class="active">Futbol</li></a>
+                        <a href="/newFormula"><i class="fa-solid fa-gauge-high"></i><li>Formula I</li></a>
+                        <a href="/newPadel"><i class="fa-solid fa-table-tennis-paddle-ball"></i><li>World Padel Tour</li></a>
+                    </ul>
+                </nav>
             </div>
-        </header>
-        <div class="nav-sports">
-            <nav>
-                <h3>Favoritos</h3>
-                <ul>
-                    <a href=""><i class="fa-solid fa-futbol"></i><li class="active">Futbol</li></a>
-                    <a href=""><i class="fa-solid fa-gauge-high"></i><li>Formula I</li></a>
-                    <a href=""><i class="fa-solid fa-table-tennis-paddle-ball"></i><li>World Padel Tour</li></a>
-                </ul>
-            </nav>
-        </div>
-    </section>
+            <section layout:fragment="content-newFutbol">
+            </section>
+            <section layout:fragment="content-newFormula">
+            </section>
+            <section layout:fragment="content-newPadel">
+            </section>
+        </section>
+
+
 </body>
 </html>

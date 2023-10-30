@@ -10,7 +10,10 @@
 <body>
 <section layout:fragment="content-session">
     <div class="cuadroformu">
-    <form action="#" th:action="@{/processForm}" th:object="${user}" method="post" class="formulario">
+        <div>
+            <h2>Inicio de Sesion</h2>
+        </div>
+    <form action="#" th:action="@{/processFormS}" th:object="${user}" method="post" class="formulario">
             <div class="w-50 mb-3">
                 <input type="text" th:field="*{email}" placeholder="Email" class="form-control"/>
                 <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</div>
@@ -19,7 +22,7 @@
                 <input type="password" th:field="*{password}" placeholder="Password" class="form-control"/>
                 <td th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</td>
             </div>
-            <div class="mb-3">
+            <div class="mb-3 btnformu">
                 <button type="submit" class="btn btn-primary mb-3 btn-form">Inicio</button>
             </div>
     </form>

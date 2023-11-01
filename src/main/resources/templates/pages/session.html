@@ -10,7 +10,7 @@
 <body>
 <section layout:fragment="content-session">
     <div class="cuadroformu">
-    <form action="#" th:action="@{/processForm}" th:object="${user}" method="post" class="formulario">
+    <form action="#" th:action="@{/login}" th:object="${user}" method="post" class="formulario">
             <div class="w-50 mb-3">
                 <input type="text" th:field="*{email}" placeholder="Email" class="form-control"/>
                 <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</div>

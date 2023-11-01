@@ -231,6 +231,10 @@
     align-items: start;
     margin-left: 46%;
 }
+.logoHeader h1:hover{
+    transform: skewX(20deg);
+    text-decoration-line: line-through;
+}
 .brilloH{
 
 }
@@ -249,7 +253,7 @@
      display: flex;
      font-size: 3rem;
      text-align: center;
-     text-decoration-line: line-through;
+
 }
 .ligas{
     width:100%;

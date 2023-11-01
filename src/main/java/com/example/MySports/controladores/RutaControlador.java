@@ -39,22 +39,31 @@ public class RutaControlador {
     public String showSession(Model m) {
         m.addAttribute("user", new User());
         return "pages/session";
+
     }
 
-    @RequestMapping("/processForm")
+    @RequestMapping("/login")
     public String showCustomerData(@Valid @ModelAttribute("user") User use, BindingResult thebindingresult) {
-        if (thebindingresult.hasErrors()) {
+        userRepository.findAll();
+
+        if (thebindingresult.hasErrors() || (!userRepository.findAll().get(userRepository.findAll().size()-1).getEmail().equals(use.getEmail())) ) {
             return "pages/registro";
         } else {
-            userRepository.save(use);
-            return "pages/registro";
+
+            return "pages/sports";
         }
 
 
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<?> registerUser(@Valid  User use) {
-        return new ResponseEntity<>("User registered Successfully!", HttpStatus.OK);
+    public String registerUser(@Valid  @ModelAttribute("user") User use, BindingResult thebindingresult) {
+
+        if(thebindingresult.hasErrors()){
+            return "pages/registro";
+        }else{
+            userRepository.save(use);
+            return "User registered Successfully!";
+        }
     }
 }
